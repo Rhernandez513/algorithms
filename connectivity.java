@@ -7,9 +7,7 @@ package com.company;
 import com.sun.xml.internal.ws.api.pipe.FiberContextSwitchInterceptor;
 
 import java.io.*;
-
 import java.util.*;
-
 
 public class Main {
 
@@ -24,9 +22,6 @@ public class Main {
         //  with each entry looking like
         //  11111, 222222
         ArrayList<String> split_contents = split(content, "\n");
-        ArrayList<String> number_pair = new ArrayList<String>();
-
-
 
         ArrayList<Integer> a_list = new ArrayList<Integer>();
         ArrayList<Integer> b_list = new ArrayList<Integer>();
@@ -39,33 +34,29 @@ public class Main {
             String WorkingString = split_contents.toArray()[count].toString();
             String[] result = WorkingString.split(",");
             System.out.println(WorkingString);
-
             a_list.add(Integer.parseInt(result[0]));
             b_list.add(Integer.parseInt(result[1]));
-
-            System.out.println(result[0]);
-            System.out.println(result[1]);
-
             count+=1;
         }
 
 
+        HashMap<String, Node> graph = new HashMap<String, Node>();
 
-        // Hashtable<Integer, Integer> edges = new Hashtable<Integer, Integer>();
 
-       /* for (String item : split_contents
-             ) {
-                    number_pair.add(split(item, ","))
-                    Integer.parseInt(item);
 
-        }*/
+
+    }
+
+    public class Node {
+        Integer vertex_label;
+        ArrayList<Node> adjacencyList;
     }
 
     public static boolean connectivity(int x, int y) {
         return false;
     }
 
-    public static String read_input(String fileName) {
+    private static String read_input(String fileName) {
 
         String fileAsString = null;
         try {
@@ -100,7 +91,7 @@ public class Main {
         return fileAsString;
     }
 
-    public static ArrayList<String> split(String input, String split) {
+    private static ArrayList<String> split(String input, String split) {
         return new ArrayList<String> (Arrays.asList(input.split(split)));
     }
 
