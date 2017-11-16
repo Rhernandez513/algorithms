@@ -15,20 +15,24 @@ def read_input(file_name):
 
 # http://www.geeksforgeeks.org/union-find/
 # A utility function to find the subset of an element i
-def find_parent(self, parent, i):
+def find_parent(parent, i):
     if parent[i] == -1:
         return i
     if parent[i] != -1:
-        return self.find_parent(parent, parent[i])
+        return find_parent(parent, parent[i])
 
 # http://www.geeksforgeeks.org/union-find/
 # A utility function to do union of two subsets
-def union(self,parent,x,y):
-    x_set = self.find_parent(parent, x)
-    y_set = self.find_parent(parent, y)
+def union(parent,x,y):
+    x_set = find_parent(parent, x)
+    y_set = find_parent(parent, y)
     parent[x_set] = y_set
 
 def connectivity(x, y):
+
+    # find minimum of x and y
+
+    # if both in disjoin set return true
     return 0
 
 
@@ -61,12 +65,3 @@ if __name__ == "__main__":
 
     print(dict_pairs)
     # at this point the graph should be in a list, prepared for union merge
-
-
-    value_one = "b"
-    value_two = "a"
-
-    value_index = find(value_one, hash_set)
-
-    merge(hash_set, disjoint_set, value_one, value_two)
-
