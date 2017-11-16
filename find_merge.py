@@ -65,3 +65,17 @@ if __name__ == "__main__":
 
     print(dict_pairs)
     # at this point the graph should be in a list, prepared for union merge
+
+ # go back into the file, look at the pairs
+    # for each pair should be in a set
+    # should check if they are already in the same set
+    # if they are then go to the next line because there is no work to be done
+    # if not should be joined
+    # find set that cointains both values and add them together
+    # should differentiate which set gets added to which
+    # the set that remains constant is the set with the lowest key
+    # constant = the one that is being added to
+    # find the minimum key, is the destination
+    # the higher value key is the destination
+
+
